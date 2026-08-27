@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Ezan Saati — Namaz Vakitleri, Kur'an-ı Kerim ve Kıble Uygulaması</title>
+<meta name="description" content="Ezan Saati; il ve ilçenize göre namaz vakitleri, ezan bildirimleri, Kur'an-ı Kerim (Diyanet ve Elmalılı meali), kıble bulucu ve dini bilgi soruları sunan ücretsiz Android uygulamasıdır.">
+<link rel="canonical" href="https://TTK-prens.github.io/ezan-saati/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="Ezan Saati">
+<meta property="og:title" content="Ezan Saati — Namaz Vakitleri, Kur'an ve Kıble Uygulaması">
+<meta property="og:description" content="İl ve ilçenize göre namaz vakitleri, ezan bildirimleri, Kur'an-ı Kerim, kıble bulucu ve dini bilgi soruları — tek uygulamada.">
+<meta property="og:url" content="https://TTK-prens.github.io/ezan-saati/">
+<meta property="og:image" content="https://TTK-prens.github.io/ezan-saati/img/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Ezan Saati",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Android",
+  "inLanguage": "tr",
+  "description": "İl ve ilçeye göre namaz vakitleri, ezan bildirimleri, Kur'an-ı Kerim, kıble bulucu ve dini bilgi soruları sunan ücretsiz Android uygulaması.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" }
+}
+</script>
+
+<style>
+  :root {
+    --ground: #EFF3EF;
+    --ground-2: #E5EBE5;
+    --card: #FFFFFF;
+    --ink: #12211C;
+    --ink-soft: #4A5A53;
+    --ink-faint: #7C8A83;
+    --rule: #D2DCD5;
+    --emerald: #0E4D3C;
+    --gold: #A8851F;
+    --gold-mark: #C0982A;
+    --shadow: 0 1px 2px rgba(18,33,28,.06), 0 8px 24px rgba(18,33,28,.06);
+    --display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --data: ui-monospace, "SF Mono", "Cascadia Mono", "Segoe UI Mono", Consolas, monospace;
+    --measure: 66ch;
+    --pad: clamp(1.25rem, 5vw, 3rem);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #071A14; --ground-2: #0B241C; --card: #0D2A21;
+      --ink: #E8EFEA; --ink-soft: #A9BCB3; --ink-faint: #7C9188;
+      --rule: #1D4034; --emerald: #2E9C7B; --gold: #E3C766; --gold-mark: #D9B94E;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--ground); color:var(--ink); font-family:var(--body);
+         font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  .wrap { max-width:1080px; margin:0 auto; padding-inline:var(--pad); }
+  h1,h2,h3 { font-family:var(--display); font-weight:600; text-wrap:balance; margin:0; }
+  .eyebrow { font-family:var(--body); font-size:.72rem; font-weight:600; letter-spacing:.14em;
+             text-transform:uppercase; color:var(--gold); margin:0; }
+  a { color:var(--emerald); text-underline-offset:3px; }
+  a:focus-visible { outline:2px solid var(--gold-mark); outline-offset:3px; border-radius:3px; }
+
+  .masthead { display:flex; align-items:center; gap:.75rem; padding-block:1.5rem; border-bottom:1px solid var(--rule); }
+  .mark { width:40px; height:40px; border-radius:11px; display:block; flex:none; }
+  .wordmark { display:flex; flex-direction:column; line-height:1.15; }
+  .wordmark b { font-family:var(--display); font-size:1.15rem; font-weight:600; }
+  .wordmark span { font-size:.72rem; color:var(--ink-faint); letter-spacing:.06em; }
+  .masthead .arabic { margin-inline-start:auto; font-size:1.35rem; color:var(--gold); }
+
+  .hero { padding-block: clamp(2.5rem,7vw,4.5rem) 1rem; }
+  .hero h1 { font-size:clamp(2rem,5.6vw,3.4rem); line-height:1.1; letter-spacing:-.015em; max-width:18ch; }
+  .lede { margin:1.1rem 0 0; max-width:54ch; font-size:clamp(1rem,1.6vw,1.14rem); color:var(--ink-soft); }
+
+  .day { margin-top:clamp(2rem,5vw,3.25rem); border-top:1px solid var(--rule);
+         border-bottom:1px solid var(--rule); padding-block:1.75rem; }
+  .day-head { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:.5rem 1rem; margin-bottom:.5rem; }
+  .day-head .place { font-size:.8rem; color:var(--ink-faint); }
+  .arc { width:100%; height:auto; display:block; overflow:visible; }
+  .arc-line { fill:none; stroke-width:2; stroke-linecap:round; }
+  .arc-dot { fill:var(--gold-mark); }
+  .arc-dot.night { fill:none; stroke:var(--gold-mark); stroke-width:1.75; }
+  .horizon { stroke:var(--rule); stroke-width:1; stroke-dasharray:3 5; }
+  .strip { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:.35rem; margin:1rem 0 0; }
+  .vakit { text-align:center; min-width:0; }
+  .vakit dt { font-size:clamp(.62rem,1.6vw,.74rem); color:var(--ink-faint); white-space:nowrap; }
+  .vakit dd { margin:.2rem 0 0; font-family:var(--data); font-variant-numeric:tabular-nums;
+              font-size:clamp(.82rem,2.4vw,1.05rem); font-weight:600; }
+  .vakit.dawn dd, .vakit.night dd { color:var(--ink-soft); }
+  .day-note { margin:1rem 0 0; font-size:.78rem; color:var(--ink-faint); max-width:62ch; }
+
+  section { padding-block:clamp(3rem,7vw,5rem); }
+  section > .wrap > h2 { font-size:clamp(1.5rem,3.2vw,2.1rem); margin-top:.4rem; }
+  .section-intro { color:var(--ink-soft); max-width:var(--measure); margin:.85rem 0 0; }
+  .alt { background:var(--ground-2); }
+
+  .features { list-style:none; padding:0; margin:clamp(1.75rem,4vw,2.5rem) 0 0; display:grid; gap:1px;
+              background:var(--rule); border:1px solid var(--rule);
+              grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+  .features li { background:var(--ground-2); padding:1.4rem 1.35rem; }
+  .features h3 { font-size:1.02rem; }
+  .features p { margin:.45rem 0 0; font-size:.9rem; color:var(--ink-soft); }
+
+  .shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+           gap:clamp(1.25rem,3vw,2rem); margin-top:clamp(1.75rem,4vw,2.5rem); }
+  .shots figure { margin:0; }
+  .shots img { width:100%; height:auto; display:block; border-radius:18px;
+               border:1px solid var(--rule); box-shadow:var(--shadow); background:var(--card); }
+  .shots figcaption { margin-top:.7rem; font-size:.82rem; color:var(--ink-faint); text-align:center; }
+
+  .sources { list-style:none; padding:0; margin:1.5rem 0 0; display:grid; gap:.6rem; max-width:var(--measure); }
+  .sources li { font-size:.88rem; color:var(--ink-soft); padding-left:1rem; position:relative; }
+  .sources li::before { content:""; position:absolute; left:0; top:.62em; width:5px; height:5px;
+                        border-radius:50%; background:var(--gold-mark); }
+  .sources b { color:var(--ink); }
+
+  footer { border-top:1px solid var(--rule); padding-block:2.25rem 3rem; font-size:.85rem; color:var(--ink-faint); }
+  footer .row { display:flex; flex-wrap:wrap; gap:.6rem 1.5rem; align-items:baseline; justify-content:space-between; }
+  footer .arabic { color:var(--gold); font-size:1.1rem; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .arc-line { stroke-dasharray:1200; stroke-dashoffset:1200; animation:draw 1.5s cubic-bezier(.32,.72,.34,1) .15s forwards; }
+    .arc-dot { opacity:0; animation:rise .5s ease-out forwards; }
+    @keyframes draw { to { stroke-dashoffset:0; } }
+    @keyframes rise { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="masthead">
+    <img class="mark" src="img/icon-180.png" width="40" height="40" alt="Ezan Saati uygulama simgesi">
+    <span class="wordmark"><b>Ezan Saati</b><span>Android uygulaması</span></span>
+    <span class="arabic" lang="ar" dir="rtl">وقت الأذان</span>
+  </header>
+
+  <div class="hero">
+    <p class="eyebrow">Namaz vakti · Kur'an · Kıble</p>
+    <h1>Günün yedi vaktini, bulunduğun ilçeye göre.</h1>
+    <p class="lede">
+      Ezan Saati; namaz vakitlerini, ezan bildirimlerini, Kur'an-ı Kerim'i, kıble
+      yönünü ve Kur'an öğrenmeyi tek bir sade uygulamada toplar. Vakitler, seçtiğin
+      il ve ilçe için Diyanet İşleri Başkanlığı'nın yayınladığı verilerle gösterilir.
+    </p>
+
+    <div class="day">
+      <div class="day-head">
+        <p class="eyebrow">Günün seyri</p>
+        <span class="place">Örnek: Ankara / Keçiören</span>
+      </div>
+      <svg class="arc" viewBox="0 0 1000 250" role="img"
+           aria-label="Güneşin gün boyunca izlediği yay üzerinde yedi namaz vaktinin gerçek zaman konumları">
+        <defs>
+          <linearGradient id="sun" gradientUnits="userSpaceOnUse" x1="60" y1="0" x2="940" y2="0">
+            <stop offset="0" stop-color="var(--gold-mark)" stop-opacity=".28"/>
+            <stop offset="0.0912" stop-color="var(--gold-mark)" stop-opacity=".28"/>
+            <stop offset="0.0912" stop-color="var(--gold-mark)" stop-opacity="1"/>
+            <stop offset="0.9150" stop-color="var(--gold-mark)" stop-opacity="1"/>
+            <stop offset="0.9150" stop-color="var(--gold-mark)" stop-opacity=".28"/>
+            <stop offset="1" stop-color="var(--gold-mark)" stop-opacity=".28"/>
+          </linearGradient>
+        </defs>
+        <line class="horizon" x1="20" y1="230" x2="980" y2="230"/>
+        <path class="arc-line" stroke="url(#sun)" d="M 60 230 Q 500 -60 940 230"/>
+        <circle class="arc-dot night" cx="60" cy="230" r="5" style="animation-delay:.5s"/>
+        <circle class="arc-dot night" cx="86.8" cy="212.9" r="5" style="animation-delay:.6s"/>
+        <circle class="arc-dot" cx="140.3" cy="181.9" r="5.5" style="animation-delay:.7s"/>
+        <circle class="arc-dot" cx="507" cy="85" r="7" style="animation-delay:.8s"/>
+        <circle class="arc-dot" cx="705.9" cy="116.8" r="5.5" style="animation-delay:.9s"/>
+        <circle class="arc-dot" cx="865.2" cy="184.9" r="5.5" style="animation-delay:1s"/>
+        <circle class="arc-dot night" cx="940" cy="230" r="5" style="animation-delay:1.1s"/>
+      </svg>
+      <dl class="strip">
+        <div class="vakit dawn"><dt>İmsak</dt><dd>04:34</dd></div>
+        <div class="vakit dawn"><dt>Sabah</dt><dd>05:04</dd></div>
+        <div class="vakit"><dt>Güneş</dt><dd>06:04</dd></div>
+        <div class="vakit"><dt>Öğle</dt><dd>12:55</dd></div>
+        <div class="vakit"><dt>İkindi</dt><dd>16:38</dd></div>
+        <div class="vakit"><dt>Akşam</dt><dd>19:36</dd></div>
+        <div class="vakit night"><dt>Yatsı</dt><dd>21:00</dd></div>
+      </dl>
+      <p class="day-note">
+        Noktalar vakitlerin gün içindeki gerçek yerlerini gösterir — bu yüzden şafak
+        vakitleri birbirine yakın kümelenir. Yayın parlak bölümü güneşin ufkun
+        üzerinde olduğu süredir.
+      </p>
+    </div>
+  </div>
+</div>
+
+<section class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Neler var</p>
+    <h2>Bir günü eksiksiz karşılayan altı bölüm</h2>
+    <ul class="features">
+      <li><h3>Namaz vakitleri</h3><p>İl ve ilçe seçimiyle Diyanet verilerine uygun yedi vakit, sonraki vakte saniye saniye geri sayım ve aylık vakit listesi.</p></li>
+      <li><h3>Ezan bildirimleri</h3><p>Her vakit için ayrı ayrı: vakit girdiğinde bildir, istersen 45 dakika önce hatırlat. İstemediğin vakti tek dokunuşla kapat.</p></li>
+      <li><h3>Kur'an-ı Kerim</h3><p>Uthmani hatlı Arapça metin, Diyanet ve Elmalılı mealleri, İngilizce ve Almanca çeviri, altı hafızdan ayet ayet sesli okuma.</p></li>
+      <li><h3>Kıble bulucu</h3><p>Cihazın pusulasıyla anlık kıble yönü; yön tuttuğunda ibre renk değiştirerek haber verir.</p></li>
+      <li><h3>Kur'an öğren</h3><p>Arap alfabesinin 28 harfini dinle, sonra mikrofona söyleyerek telaffuzunu dene.</p></li>
+      <li><h3>Bilmeceler</h3><p>Kolay, orta ve zor seviyede 320'den fazla dini bilgi sorusu. Havuz sürekli karıştığı için sorular bitmez.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Uygulamadan</p>
+    <h2>Aydınlık ve karanlık temada, telefon ve tablette</h2>
+    <div class="shots">
+      <figure>
+        <img src="img/home.jpg" width="480" height="1040" loading="lazy" alt="Ezan Saati ana sayfası: Keçiören için namaz vakitleri, geri sayım ve günün ayeti">
+        <figcaption>Ana sayfa — geri sayım, güncel saat, günün ayeti</figcaption>
+      </figure>
+      <figure>
+        <img src="img/qibla.jpg" width="480" height="1040" loading="lazy" alt="Kıble bulucu ekranı: pusula ve kıble ibresi">
+        <figcaption>Kıble bulucu — pusulayla anlık yön</figcaption>
+      </figure>
+      <figure>
+        <img src="img/quiz.jpg" width="480" height="1040" loading="lazy" alt="Bilmeceler ekranı: dört şıklı dini bilgi sorusu">
+        <figcaption>Bilmeceler — dört şıklı, seri takipli</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Kaynaklar</p>
+    <h2>Veriler nereden geliyor?</h2>
+    <p class="section-intro">Uygulama içerik üretmez; güvenilir kaynakları bir araya getirir ve kaynağını açıkça belirtir.</p>
+    <ul class="sources">
+      <li><b>Namaz vakitleri</b> — Diyanet İşleri Başkanlığı'nın il/ilçe bazlı yayınladığı vakit tabloları. İnternet yokken cihaz konumundan yaklaşık hesaplama yapılır ve bu durum ekranda belirtilir.</li>
+      <li><b>Kur'an metni ve mealler</b> — alquran.cloud üzerinden Uthmani hatlı Arapça metin, Diyanet İşleri ve Elmalılı Hamdi Yazır mealleri, Saheeh International (İngilizce) ve Bubenheim &amp; Elyas (Almanca) çevirileri.</li>
+      <li><b>Sesli okuma</b> — everyayah.com arşivinden Mişarî el-Afâsî, Mahmûd el-Husârî, Muhammed el-Minşâvî, Abdülbâsit Abdüssamed, Muhammed Eyyûb ve Mâhir el-Muaykalî kayıtları.</li>
+      <li><b>Kıble yönü</b> — cihazın manyetik pusulası ve konumu kullanılarak Kâbe'ye olan yön açısı hesaplanır.</li>
+    </ul>
+    <p class="section-intro" style="margin-top:1.5rem">
+      Gizlilik politikası için <a href="gizlilik.html">bu sayfaya</a> bakabilirsiniz.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <span>Ezan Saati · Android için ücretsiz uygulama · <a href="gizlilik.html">Gizlilik Politikası</a></span>
+    <span class="arabic" lang="ar" dir="rtl">وقت الأذان</span>
+  </div>
+</footer>
+
+</body>
+</html>

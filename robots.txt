@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://TTK-prens.github.io/ezan-saati/sitemap.xml
